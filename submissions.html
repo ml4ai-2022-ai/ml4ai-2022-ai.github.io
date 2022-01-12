@@ -1,0 +1,251 @@
+<html>
+
+<!-- START HEADER -->
+
+<table style="border: 0px dotted; border-color:#555555" width=700 align=center>
+<tr><td bgcolor="#fefefe"><center>
+
+<!-- HEADER BODY -->
+<head>
+  <title>Intro to Artificial Intelligence</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta NAME="KEYWORDS" CONTENT="clayton morrison, artificial intelligence course">
+  <meta NAME="DESCRIPTION" CONTENT="ISTA 450 / INFO 550: Artificial Intelligence homepage.">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <!-- https://github.com/google/code-prettify -->
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  
+</head>
+
+<body onload="prettyPrint()">
+	
+
+<div style="position:relative; left:0">
+  <div style="line-height:1">
+  <font size=+3 color="#222222"><b>Introduction to Artificial Intelligence</b></font><br>
+  <font size=+2 color="#222222">[Spring 2022]</font><br>
+  </div>
+
+  <div style="line-height:2">
+  <a href="index.html">course home</a> |
+  <a href="python_setup.html">python setup</a> |
+  <!-- <a href="tutorial.html">short code tutorial</a> | -->
+  <a href="submissions.html">submission instructions</a> |
+  <a href="schedule.html">schedule</a> |
+  <a href="links.html">links</a>
+  </div>
+</div>
+<!-- END HEADER BODY -->
+
+</center></td> </tr>
+</table>
+
+<table style="border: 0px dotted; border-color:#555555; position:relative; top: 1;" width=700 align=center>
+<tr><td bgcolor="#333333"></td></tr>
+</table>
+
+<table style="border: 0px dotted; border-color:#555555; position:relative; top: 1;" width=700 align=center>
+<tr><td bgcolor="#fefefe"><br><br>
+
+<center>
+<table width=600 align=center>
+<tr><td>
+
+<!-- END HEADER -->
+
+<!-- MAIN BODY: SUBMISSION INSTRUCTIONS -->
+<h2>ISTA 450/550: Artificial Intelligence - Assignment Submission Instructions</h2>
+
+<p>
+Please consult the <a href="https://ischool.arizona.edu/%3Cnolink%3E/academic-integrity">School of Information Extension fo the Code of Academic Integrity Involving Programming</a>. Unless explicitly noted by the instructors, all programming assignments will follow Plan A.
+</p>
+
+There will be two types of submissions in this class:
+<ol>
+<li><b>Programming projects</b> that will be made available and that you will submit to through GitHub Classroom using the git version control system
+</li>
+<li><b>Written assignments</b> that will be made available and submitted through a course D2L Assignments folder. 
+</li>
+</ol>
+<p>Please see the appropriate section below for details on either.</p>
+
+
+<h3> 1. Programming Projects (using GitHub Classroom) </h3>
+
+<p>Programming projects will be released to you using a GitHub Classroom set up for this course. As part of this, you will use the <code>git</code> version control program on your personal computer to retrieve the code (<code>clone</code>) and keep track of changes you make (using <code>add</code>, <code>commit</code> and <code>push</code>). Submitting simply means that you have made your final code <code>push</code> to the repository BEFORE the submission deadline.</p>
+
+<ul>
+<li><h4> Getting Git on your computer </h4>
+
+<p><b>Mac</b> and <b>Linux</b> usually have <code>git</code> already available from the command-line (shell or Terminal). If not, see <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">these instructions</a>.</p>
+
+<p>If you are using <b>Windows</b>, we recommend using <a href="https://gitforwindows.org/">git for windows</a>.</p>
+
+<p>Git is officially "the stupid content tracker"; that is, it is a version control system created by people with a sense of humor (it is not stupid at all!).
+See <a href="https://linux.die.net/man/1/git">the git man page</a> for the complete list of commands. 
+However, we are generally only going to use a very small subset of these (see the next "Recipe" section).
+</p>
+
+<p>If you want some more details about what git is, see this video: <a href="https://git-scm.com/video/what-is-git">https://git-scm.com/video/what-is-git</a>.
+The following link, "The World According to Git", also has a good introduction <a href="http://www.eecs.harvard.edu/~cs161/resources/git.html">http://www.eecs.harvard.edu/~cs161/resources/git.html</a>. 
+<!-- Here is complementary resource on style in Git, which also has good advice: https://github.com/agis/git-style-guide. -->
+</p>
+</li>
+
+<li><h4> Recipe for getting and submitting your programming project </h4>
+
+<p>To access the GitHub Classroom project release, we will provide you a link to the project release. We will send one of these links for each project (there will be a different link for each project). Included in each release will be a due date/time - your project code must be <code>push</code>'ed BEFORE this date/time. You will still be able to <code>push</code> changes after that date, but we will only grade what was last <code>push</code>'ed BEFORE the due date/time.</p>
+
+<ol>
+<li><h5>Associate your GitHub account with the Project release</h5>
+
+<p>To access the project via the link, you will need a GitHub account that will then be associated with the project release. If you already have an existing GitHub account, feel free to us it! If you don't already have an account, or your want to create one specific to this class, then create one here: <a href="https://github.com/join?source=header-home">https://github.com/join?source=header-home</a>. Note that you only need ONE GitHub account for all of the course projects.
+</p>
+
+<p>Once your account is set up, follow the project link we provide.
+   <!-- The first time you do this, you will be presented with the list of names of everyone enrolled in the class, presented as email (netid) followed by last and first names. Find your name and click on it. -->
+   After you do this, a private repository will be created for the project in your GitHub account.
+</p>
+</li>
+
+<li><h5>Use Git to work on your project on your computer</h5>
+<p>After having created the project repository associated with your GitHub account (in the previous step), now you can use <code>git</code> to get the repository code on to your local computer (via <code>clone</code>) and add/commit/push your changes to the repository.
+</p>
+
+<p>The first step is to <code>clone</code> the repository onto your local computer.
+
+To do this, copy the link from the green button on your GitHub project repository page that says "Clone or download" - if your GitHub account is called myGitAccount, then the repository link will look something like this:
+
+<pre class="prettyprint">
+   git@github.com:ml4ai-2022-spring-ai/project-1-search-myGitAccount.git
+</pre>
+
+Now open a terminal window, and go to a location/directory where you want to save and work on your local project code (likely this will be the same location for all of your course project code development). From there, you will clone the repository by pasting the repository link after the <code>git clone</code> command, as follows (the <code>$</code> indicates the command-line prompt):
+
+<pre class="prettyprint">
+   $ git clone git@github.com:ml4ai-2022-spring-ai/project-1-search-myGitAccount.git
+</pre>
+
+Now you can develop your code on your local machine and use git to FREQUENTLY commit and push your updates to your project repository. For this, you will use the following Git commands:
+
+<ul>
+<li><code>git status</code> : Displays the current status of the versioning of your code, including listing which files are currently under "Changes not staged for commit" (they need to be added using git <code>add</code>), and which files are ready for commit under "Changes to be committed". Only files that have this latter status can be committed to your local repository.
+</li>
+<li><code>git add</code> : Include one or more filepaths after <code>git add</code> to set their status to "Changes to be committed", after which you can then <code>commit</code> them. If you change these files before you run <code>commit</code>, you will need to add them again (to get those latest changes). Here's an example of adding file1 and file2:
+<pre class="prettyprint">
+   $ git add file1 file2
+</pre>
+</li>
+<li><code>git commit</code> : After you have added files so that their status is under the "Changes to be committed", then you are ready to commit those changes in those files to your local (on your computer) repository state. You always need to include a message, specified by <code>-m</code> followed by a string with your commit comment message. For example:
+<pre class="prettyprint">
+   $ git commit -m"Fixed bug in search."
+</pre>
+</li>
+<li><code>git push</code> : This command "pushes" your current local (on your computer) repository state to your GitHub account "remote" repository. It is this remote repository that we are grading, so you MUST push your latest commits to that repository BEFORE the due date/time - as noted above, we will only be grading the latest pushed state that was made as of the deadline.
+</li>
+<li><code>git pull</code> : A final command that may sometimes be relevant is to <code>pull</code> any changes that were made in your "remote" project repository to your local machine. This would be relevant in this class if, say, one of the instructors has made a change to your repository. But this will be rare. In general, you will be the sole developer of your own project code, so will only be managing making local changes, adding them, committing them, and pushing them to the remote repository.
+</li>
+</ul>
+<p></p>
+
+<p>That's basically it. Now, <b>VERY IMPORTANT: You will want to <code>add</code>, <code>commit</code> and <code>push</code> your code changes REGULARLY</b>. Get in the habit of doing it after every significant change you make to your code - while you're coding, this may be every 10 minutes or so (that's just a rough estimate - it's up to you). Include informative commit messages, which help you understand what you changed. The instructors will use your commit history (viewable by you in GitHub) to monitor your progress. Another benefit of doing this is that if you make changes you aren't happy with, you can "rollback" to a previous state that you already committed. See <a href="https://stackoverflow.com/questions/4114095/how-do-i-revert-a-git-repository-to-a-previous-commit">here</a>.</p>
+
+<p>And <b>MOST IMPORTANT: make sure you have made an <code>add</code>, <code>commit</code> and <code>push</code> for your final submission BEFORE the deadline</b>. Once more: we will only be grading the last <code>push</code> made before the deadline. We will not consider pushes made after the deadline. There is nothing more to do for submitting than making that final <code>push</code>.</p>
+
+<p>There are many other Git commands, but most will not be relevant to our standard use of Git in this class. For example, we do not generally require using branches or doing pull-requests. All grading will be done for the submission in the <b>master</b> branch. You are welcome to use branches yourself, but it is your responsibility to ensure the proper submission is included in the final push to master.
+</p>
+</li>
+
+</ol> <!-- END Recipe OL -->
+
+</li> <!-- END Recipe section  -->
+
+</ul> <!-- END Programming Projects UL section -->
+
+
+<h3> 2. Written Assignments (using D2L) </h3>
+
+<p></p>
+
+<!--announcements-->
+
+<!--
+<p><a href="index.html">ISTA 450/550 Home</a>
+
+<h3>Introduction</h3>
+
+Unless otherwise noted, we will use the Assignments dropboxes on the <a href="https://d2l.arizona.edu/">D2L page</a> for this class for submitting all assignments.
+
+<p>Also, again unless otherwise noted, assignments will be due to the Dropbox by <b>5pm</b> on the date the assignment is due.
+
+<p>There are two general types of assignments: written homework and programming project assignments.
+
+<h3> Written Assignments </h3>
+
+All written assignments will be completed and submitted individually through the <a href="https://d2l.arizona.edu/">D2L</a> Assignments dropbox for the assignment.  <b>Written assignments must be submitted in PDF format</b>.
+
+Please use the following naming convention:<br>
+<pre>
+     hw-&lt;homework-number&gt;-&lt;your-last-name&gt;.pdf
+</pre>
+So, for example, if you name is "Some Student" and you were submitting homework 3, then your file would have the following name:
+<pre>
+     hw-3-student.pdf
+</pre>
+
+<h3> Programming Project Submission </h3>
+
+<p><b>Important note:</b> Include <b>comments</b> in your code that explain <em>clearly</em> what your code is doing!  You will loose points if you don't clearly comment your code.
+
+<p>Projects will be done individually or in groups of <b>up to 3 people</b>.  If you work in a group, then the final submission must include a single file named partners.txt that contains the name and email address of every person, along with a brief description of what the person did in the project.  That is, the format of the file will be:<br>
+<pre>
+     &lt;name of person 1&gt; &lt;email address&gt; &lt;what you did&gt;
+     &lt;name of person 2&gt; &lt;email address&gt; &lt;what you did&gt;
+     ...
+</pre>
+
+<p>All programming assignments involve one or more source code files, but typically <b>not all</b> of the files that are in the code base.  
+Follow the instructions for the specific project, turning in <b>only</b> what is specified (plus partners.txt and any additional files you create yourself).
+
+<p>You will submit your files in an archive; the following archive types are acceptable: .zip, .z, .gz, .tar, or .tgz
+
+<p>Please use the following naming convention for your submitted archive:
+<pre>
+     &lt;last-name-of-submitter&gt;-p&lt;project-number&gt;.[zip|z|gz|tar|tgz]
+</pre>
+So, for example, if you are submitting the initial tutorial project and your name is "Jane Doe" and you created a .zip archive, then your submitted archive would have this name:
+<pre>
+     doe-p0.zip
+</pre>
+If you are part of a group that includes "Wilma Wildcat" and "John Smith" and John Smith is submitting project 3 in a tarball archive, then the name of the archive would be:
+<pre>
+     smith-p3.tgz
+</pre>
+Only <em>one</em> person from the team needs to submit the archive to the <a href="https://d2l.arizona.edu/">D2L</a> Assignments dropbox; partners.txt will be used to assign credit to all members of the group.
+
+<hr>
+
+-->
+
+<!-- END MAIN BODY: SUBMISSION INSTRUCTIONS -->
+
+
+
+<!-- FOOTER -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35913794-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+
+
+</html>
