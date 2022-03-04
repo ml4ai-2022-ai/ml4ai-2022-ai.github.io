@@ -80,7 +80,8 @@ the AIMA code).</p>
   <!-- <td><code><a href="docs/wumpus_kb.html">wumpus_kb.py</a></code></td> -->
   <td><code>wumpus_kb.py</code></td>
   <td>Contains code to generate the wumpus knowledge base.  You need
-  to fill in most of these functions!</td></tr>
+  to fill in most of these functions! (most of these functions are "axiom generators", 
+  which will be described in more detail below).</td></tr>
 
   <tr>
   <!-- <td><code><a href="docs/wumpus_planners.html">wumpus_planners.py</a></code></td> -->
@@ -636,7 +637,7 @@ put together.</p>
  have much more sophisticated storage).  Representation of the
  assertions (sentences) themselves are built on top of the AIMA
  implementation of propositional logic.  As you will be implementing
- <em>axiom generators</em>, it is important you understand how propositional
+ axiom generators, it is important you understand how propositional
  sentences, initially expressed in strings, are turned into the
  underlying propositional logic representations.  Take a look in
  <!-- <code><a href="docs/logic.html">logic.py</a></code> -->
@@ -766,8 +767,35 @@ you will work in
 <code>wumpus_kb.py</code>, adding your code
 to all locations indicated by <code>"### YOUR CODE HERE ###"</code>.
 You will notice a pattern here: all of the methods you are
-implementing start with "<code>axiom_generator_</code>..." in their name.  The doc
-strings to these functions describe the knowledge (at the "knowledge level"") 
+implementing start with "<code>axiom_generator_</code>..." in their name.  
+
+<p>So what is an "<em>axiom generator<em>"? Let's start with proposition variables
+themselves. If we specify
+a Pit a location 2,3, we create a specific proposition symbol -- in our KB 
+naming convention, this will be denoted by the string "<code>P2_3</code>".
+It would be tedious to have to manually write all of these individual names, 
+so we've provided a collection of helper functions for creating propositional 
+variables with our conventional names -- see all of the functions in the 
+<code>Wumpus Propositions</code> section of <code>wumpus_kb.py</code>), from lines
+4 through 167. The defined the entire "vocabulary" for our propositional KB
+proposition variables. You should not change any of these, although you will use
+them. As you can see, if you call <code>pit_str</code> with the arguments x=2 and 
+y=3 you will get the string "<code>P2_3</code>", as desired. Using these 
+proposition-name-building functions will also help avoid small typo errors that
+could be hard to track down.</p>
+
+Similar to proposition symbols themselves, there will be a number of axioms 
+that we need to add to our KB,
+including some new axioms that get generated at each time step. Again, it
+would be tedious to manually write each variant of the axioms -- instead, we
+would like to be able to programmatically add these as needed (including at times
+based on the current state of the explorer agent). Axiom generators are helper
+functions that generate propositional logic sentences as strings based on 
+provided arguments. For example, the <code>axiom_generator_percept_sentence</code>
+(see line 175 of <code>wumpus_kb.py</code>) will generate a new percept axiom 
+sentence based on the current percepts (<code>tvec</code>) at a given time step 
+(<code>t</code>). The doc strings to each axiom generator functions describes 
+the knowledge (at the "knowledge level") 
 that you need to assert in propositional logic, with explanations of what 
 the function arguments represent.  The return values are assumed to be strings
 representing the PL assertions that express the propositional logic form of
