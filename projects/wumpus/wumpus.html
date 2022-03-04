@@ -733,17 +733,19 @@ is stored in the <code>clauses</code> store of the KB is a list of the
 individual clauses of the CNF.  This is demonstrated on line 7.</p>
 
 <p>Finally, a note about the use of MiniSat.  MiniSat is a SAT solver,
-meaning that it searches for the a satisfying assignment to a set of
-CNF clauses, return True if such an assignment is found (and in
+meaning that it searches for a satisfying assignment of truth values to 
+the proposition variables in a set of
+CNF clauses -- that is, that makes the entire set of sentences True. 
+The SAT sovler returns True if such an assignment is found (and in
 MiniSat's case, it also returns the satisfying assignment), or False
 if no assignment is found.  This is a good building block but not by
 itself sufficient for propositional inference.  In our case, we will
 not be doing full proposition inference, but instead asking whether
 individual propositions are entailed (True) or not (False) by the KB,
-or whether their truth cannot be determined.  In order to determine
+or whether their truth cannot be determined (unknown).  In order to determine
 which of these three possible outcomes is the case, the
-<code>ask()</code> method of <code>PropKB_SAT</code> make <em>two</em>
-calls to minisat, one which which the query variable (the proposition
+<code>ask()</code> method of <code>PropKB_SAT</code> makes <em>two</em>
+calls to minisat, one which the query variable (the proposition variable
 who's truth we're trying to determine) is assumed to be True, and one
 where it is assume to be False, and in both cases minisat determines
 whether that assertion conjuncted with all of the clauses in the KB is
