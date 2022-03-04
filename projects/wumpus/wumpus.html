@@ -771,34 +771,37 @@ implementing start with "<code>axiom_generator_</code>..." in their name.
 
 <p>So what is an "<em>axiom generator</em>"? Let's start with proposition variables
 themselves. If we specify
-a Pit a location 2,3, we create a specific proposition symbol -- in our KB 
+a Pit a location 2,3, we create a specific proposition symbol. In our KB 
 naming convention, this will be denoted by the string "<code>P2_3</code>".
 It would be tedious to have to manually write all of these individual names, 
-so we've provided a collection of helper functions for creating propositional 
-variables with our conventional names -- see all of the functions in the 
-<code>Wumpus Propositions</code> section of <code>wumpus_kb.py</code>), from lines
-4 through 167. The defined the entire "vocabulary" for our propositional KB
-proposition variables. You should not change any of these, although you will use
-them. As you can see, if you call <code>pit_str</code> with the arguments x=2 and 
-y=3 you will get the string "<code>P2_3</code>", as desired. Using these 
-proposition-name-building functions will also help avoid small typo errors that
-could be hard to track down.</p>
+and it would also be easy to make a mistake while writing these proposition
+symbol names, and small typos could be hard to track down. For this reason, 
+we've provided a collection of helper functions for creating propositional 
+variables with our conventional names; see all of the functions in the 
+<code>Wumpus Propositions</code> section of <code>wumpus_kb.py</code>, from lines
+4 through 167. These proposition symbol generators define the entire "vocabulary" 
+for our propositional KB proposition variables. You should not change any of these
+functions, although you will use them. As you can see, if you call 
+<code>pit_str</code> with the arguments <code>x=2</code> and <code>y=3</code>, 
+you will get the string "<code>P2_3</code>", as desired.</p>
 
 Similar to proposition symbols themselves, there will be a number of axioms 
 that we need to add to our KB,
-including some new axioms that get generated at each time step. Again, it
-would be tedious to manually write each variant of the axioms -- instead, we
-would like to be able to programmatically add these as needed (including at times
-based on the current state of the explorer agent). Axiom generators are helper
-functions that generate propositional logic sentences as strings based on 
+including some axioms that get generated at each time step. Again, it
+would be tedious to manually write each variant of the axioms, including across
+all possible time-steps. Instead, we
+would like to be able to programmatically add appropriately specified axioms 
+as needed (including at times based on the current state of the explorer agent). 
+Axiom generators are helper
+functions that generate propositional logic axiom sentences as strings based on 
 provided arguments. For example, the <code>axiom_generator_percept_sentence</code>
 (see line 175 of <code>wumpus_kb.py</code>) will generate a new percept axiom 
 sentence based on the current percepts (<code>tvec</code>) at a given time step 
-(<code>t</code>). The doc strings to each axiom generator functions describes 
+(<code>t</code>). The doc strings to each axiom generator function describes 
 the knowledge (at the "knowledge level") 
 that you need to assert in propositional logic, with explanations of what 
 the function arguments represent.  The return values are assumed to be strings
-representing the PL assertions that express the propositional logic form of
+representing the PL axiom assertions that express the propositional logic form of
 the knowledge.</p>
 
 <p>Section 7.7 of AIMA (4th Ed), starting on page 237, is a good guide for a
