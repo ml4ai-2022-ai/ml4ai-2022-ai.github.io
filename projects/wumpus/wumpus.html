@@ -797,7 +797,11 @@ functions that generate propositional logic axiom sentences as strings based on
 provided arguments. For example, the <code>axiom_generator_percept_sentence</code>
 (see line 175 of <code>wumpus_kb.py</code>) will generate a new percept axiom 
 sentence based on the current percepts (<code>tvec</code>) at a given time step 
-(<code>t</code>). The doc strings to each axiom generator function describes 
+(<code>t</code>). An axiom generator, in turn, can make use of the appropriate 
+proposition symbol generator(s) to specify the particular proposition symbol names
+appropriate to the context (as specified by the appropriate argument values -- e.g.,
+by naming which state location is OK at which time, using <code>state_OK_str</code>)
+The doc strings to each axiom generator function describes 
 the knowledge (at the "knowledge level") 
 that you need to assert in propositional logic, with explanations of what 
 the function arguments represent.  The return values are assumed to be strings
