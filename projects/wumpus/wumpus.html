@@ -384,7 +384,7 @@ costs one point, shooting the arrow (irrespective of whether it kills
 the Wumpus) costs 10 points, and leaving the caves (accomplished by
 executing '<code>Climb</code>' in the same location that the hunter
 agent started in (the cave 'entrance') <em>with</em> the Gold (i.e.,
-having previously successfuly '<code>Grab</code>'bed the Gold), earns
+having previously successfuly '<code>Grab</code>'bed the Gold) earns
 1000 points.  Dying, by entering a square with the Wumpus or a Pit,
 costs 1000 points.</p>
 
@@ -530,7 +530,7 @@ provide some code).</li>
 (it is a
 subclass of the <code>Explorer</code>).  The HWA defines an
 <code>agent_program</code> that implements the Wumpus agent as
-specified in Figure 7.20, page 270 of AIMA 3rd Edition.  
+specified in Figure 7.20, page 242 of AIMA 4th Edition.  
 Once you have correctly implemented the knowledge base
 axiom generators (in 
 <!-- <code><a href="docs/wumpus_kb.html">wumpus_kb.py</a></code> -->
@@ -636,7 +636,7 @@ put together.</p>
  have much more sophisticated storage).  Representation of the
  assertions (sentences) themselves are built on top of the AIMA
  implementation of propositional logic.  As you will be implementing
- axiom generators, it is important you understand how propositional
+ <em>axiom generators</em>, it is important you understand how propositional
  sentences, initially expressed in strings, are turned into the
  underlying propositional logic representations.  Take a look in
  <!-- <code><a href="docs/logic.html">logic.py</a></code> -->
@@ -648,15 +648,21 @@ put together.</p>
 <pre>
 In [1]: import logic
 
+# Express a propositional logic sentence in a string
 In [2]: a = '(A & B) >> ( ~(C | D) <=> E )'
 
+# Create an expression object representation of the propositional logic 
+# sentence in the string a
 In [3]: e = logic.expr(a)
 
+# Display the expression (this matches the original string representation)
 In [4]: e
 Out[4]: ((A & B) >> (~(C | D) <=> E))
 
+# Convert the PL expression to conjunctive normal form (CNF)
 In [5]: c = logic.to_cnf(e)
 
+# Display the CNF
 In [6]: c
 Out[6]: ((~C | ~E | ~A | ~B) & (~D | ~E | ~A | ~B) & (E | C | D | ~A | ~B))
 
@@ -671,13 +677,13 @@ class in
 <!-- <code><a href="docs/logic.html">logic.py</a></code> -->
 <code>logic.py</code>.  The
 function <code>expr()</code> parses that string and builds an
-<code>Expr</code>.  The <code>Expr</code> object is designed to have a
+<code>Expr</code> object.  The <code>Expr</code> object is designed to have a
 "pretty" python representation, an example of which is on line 4 above
 (this is accomplished by the definition of the <code>__repr__()</code>
 method in Expr; see <a
  href="http://stackoverflow.com/questions/1984162/purpose-of-pythons-repr">this
 explanation</a>).  But keep in mind that this is an object!  It has
-two main fields: the operator, <code>op</code>, and a list of
+two main fields: the expression operator, <code>op</code>, and a list of
 arguments to the operator, <code>args</code>.  Since the variable
 <code>e</code> currently references the Expr, we can inspect the
 <code>op</code> and <code>args</code> as follows:</p>
