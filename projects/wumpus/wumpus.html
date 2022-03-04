@@ -666,6 +666,7 @@ In [5]: c = logic.to_cnf(e)
 In [6]: c
 Out[6]: ((~C | ~E | ~A | ~B) & (~D | ~E | ~A | ~B) & (E | C | D | ~A | ~B))
 
+# Get the list of conjuncted clauses (used in the internal KB clause store)
 In [7]: logic.conjuncts(c)
 Out[7]: [(~C | ~E | ~A | ~B), (~D | ~E | ~A | ~B), (E | C | D | ~A | ~B)]
 </pre>
@@ -699,7 +700,7 @@ Out[11]: [(A & B), (~(C | D) <=> E)]
 </blockquote>
 
 <p>This shows that the Expr <code>e</code> refers to has as its
-operator the conditional symbol, and its args have two entries, the
+operator the conditional symbol (<code>>></code>), and its args have two entries, the
 first being the antecedent to the conditional, in this case <code>A
 &amp; B</code>, and the second is is the consequent, <code>~(C | D)
 <=> E</code>.  Each of these are also Exprs, with the first having the
