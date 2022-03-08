@@ -155,6 +155,23 @@ the AIMA code).</p>
   for <code>plan_route</code> and <code>plan_shot</code>.
   <b>NOTE:</b> I have modified this file slightly from the current
   AIMA release.</td></tr>
+  
+  <tr>
+  <td><code>wumpus_kb_axiom_print.py</code></td>
+  <td>A helper script that calls each of the KB axiom generator functions with 
+  example arguments. This can be used to help in debugging and examining the 
+  current state of your KB axiom generator development. 
+  Note that this does <em>not</em> test your KB for correctness, it just 
+  provides a helpful shortcut for quickly generating examples using your 
+  axiom generator implementations.</td>
+  </tr>
+  
+  <tr>
+  <td><code>wumpus_planners_test.py</code></td>
+  <td>A helper script that calls your current implementation of Plan Route Problem
+  and Plan Shot Problem in a specific scenario (for each) to help with debugging
+  your route and shot planning implementations.</td>
+  </tr>
 
 </table>
 
@@ -817,9 +834,17 @@ incomplete!</p>
 <p>After the current percept sentence generator (which converts percept
 vectors into a sentence asserting percept propositions), there are two
 general classes of axiom generators you will construct: a set that
-generate axioms describing the initial state of knowledge, and axioms
+generates axioms describing the initial state of knowledge, and axioms
 that represent changes over time (in particular, the successor-state
 axioms).</p>
+
+<p>You can use the provided helper script <code>wumpus_kb_axiom_print.py</code>
+includes example calls for each of the axiom generators you will implements,
+with example provided arguments. This can be used to help assess your
+current progress in yoru axiom generator development. Note that this script
+does not test the correctness of your axiom generators; for that you should
+try out different inference steps while running the wumpus agent with the
+<code>-k</code> (for manual) and <code>-y</code> (full automated agent) modes.</p>
 
 <p>The assertions your generators will make will be built out of
 propositions.  The first section of 
